@@ -7,14 +7,14 @@ async function userMail(userEmail, token) {
     port: 587,
     secure: false, // true for 465, false for other ports
     auth: {
-      user: "hammadt666@gmail.com",
-      pass: "umctrfucqvjongur",
+      user: process.env.USER_EMAIL_ADDRESS,
+      pass: process.env.GMAIL_SECRET_PASS,
     },
   });
 
   // Define the email options
   let mailOptions = {
-    from: '"Hammad Tariq" <hammadt666@gmail.com>',
+    from: `"Hammad Tariq" <${USER_EMAIL_ADDRESS}>`,
     to: userEmail,
     subject: "Test",
     text: "Thanks for creating an account, please click the link given below to complete the registration process",
